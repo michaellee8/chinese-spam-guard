@@ -6,6 +6,7 @@ const scanner = new ChineseTextSpamScanner(0.4);
 export = (app: Application) => {
   app.on("issues.opened", async context => {
     if (scanner.scanIssue(context.payload.issue)) {
+      context.log(`closed ${context.payload.issue.url}`);
       await context.github.issues.update(context.issue({ state: "closed" }));
     }
   });
