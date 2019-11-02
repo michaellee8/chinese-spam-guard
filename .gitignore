@@ -202,4 +202,11 @@ public/
 # DynamoDB Local files
 .dynamodb/
 
-# End of https://www.gitignore.io/api/go,node,intellij+all
+# End of https://www.gitignore.io/api/go,node,intellij+allnode_modules
+npm-debug.log
+*.pem
+!mock-cert.pem
+.env
+package-lock.json
+coverage
+lib
